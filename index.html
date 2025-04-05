@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Doll Store Quick Cart</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Smart Doll Store Quick Cart</h1>
+    <div class="header">
+        <div class="controls">
+            <select id="sort">
+                <option value="id">Sort by ID</option>
+                <option value="price">Sort by Price</option>
+                <option value="title">Sort by Title</option>
+            </select>
+            <select id="filter">
+
+                <option value="in_stock">In Stock</option>
+                <option value="out_of_stock">Out of Stock</option>
+                <option value="all">All Products</option>
+            </select>
+            <div class="checkbox-filters">
+                <label>
+                    <input type="checkbox" id="newawake-filter" checked>
+                    Only <a href="https://shop.smartdoll.jp/collections/new-and-awakened" target="_blank">New and Awakened</a>
+                </label>
+                <label class="tooltip-label">
+                    <input type="checkbox" id="show-all-filter">
+                    Show hidden
+                    <span class="tooltip-text"><i class="fas fa-warning"></i> Check this box only if you really can't find the item. Checking this box disables default filters that remove 'In development' & April 1st products, non-products, articles, etc.</span>
+                </label>
+            </div>
+            <div class="product-count">
+                Found <span id="total-count">0</span> products
+            </div>
+                    <!-- Add Search Input Field -->
+
+        </div>
+        <div class="search-container">
+            <label for="product-search">Search Products:</label>
+            <input type="text" id="product-search" placeholder="Search by product name...">
+        </div>
+        <div class="cart-link-container">
+            <label for="cart-link" class="cart-link-label">Add items you want in your cart and use the URL below. Please note that items placed in your cart before will be removed!</label>
+            <div class="cart-link-box">
+                <span id="cart-link" class="cart-link" contenteditable="true">
+                    <!-- Cart link will be dynamically generated here -->
+                </span>
+            </div>
+            <button id="copy-cart-link" class="copy-cart-link">
+                <i class="fas fa-copy"></i> Copy to Clipboard
+            </button>
+        </div>
+    </div>
+
+
+
+    <div id="product-list"></div>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
